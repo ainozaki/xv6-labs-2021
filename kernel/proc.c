@@ -305,6 +305,8 @@ fork(void)
 
   pid = np->pid;
 
+	np->syscall_trace_mask= p->syscall_trace_mask;
+
   release(&np->lock);
 
   acquire(&wait_lock);
